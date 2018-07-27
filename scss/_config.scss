@@ -3,6 +3,8 @@ $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url("https://i1.wp.com/seoulbeats.com/wp-content/uploads/2012/11/20121119_seoulbeats_songjihyo2.jpg");
 $portrait: url("https://data.whicdn.com/images/310655839/superthumb.jpg?t=1523637563");
+$portraitSm: url("http://www.dramago.com/images/actor/big/256.jpg");
+
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -28,5 +30,37 @@ $background-opacity: 0.9;
         z-index: -1;
       }
     }
+  }
+}
+
+@function setTextColor($color) {
+  @if (lightness($color) > 30) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1170px) {
+    @content;
   }
 }
