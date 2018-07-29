@@ -49,7 +49,7 @@ header {
 main {
   padding: 4rem;
   //height: 100%;
-  min-height: calc(100vh-60px);
+  min-height: calc(100vh - 60px);
   .icons {
     margin-top: 1rem;
     a {
@@ -122,6 +122,30 @@ main {
       opacity: 0.5;
       border-color: $secondary-color;
       @include easeOut;
+    }
+  }
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  div {
+    font-size: 2rem;
+    border: 3px solid #fff;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: setTextColor($secondary-color);
+      span {
+        color: setTextColor($secondary-color);
+      }
     }
   }
 }
